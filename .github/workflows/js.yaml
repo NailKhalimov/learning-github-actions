@@ -1,0 +1,12 @@
+name: Frontend
+on: [ push ]
+jobs:
+  check-code-style-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: cd ./js && node main.js
